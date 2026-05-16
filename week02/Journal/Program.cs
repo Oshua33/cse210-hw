@@ -1,8 +1,10 @@
 using System;
 
+//Author: Peace Aigbokhaebholo
+//creativity - add a mood variable to the entry class and include it in the journal entry process
 class Program
 {
-    
+
     static void Main(string[] args)
     {
         Console.WriteLine("Welcome to the Journal App.");
