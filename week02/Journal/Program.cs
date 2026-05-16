@@ -10,19 +10,25 @@ class Program
 
         //create one journal and one prompt generator object to use in the application
         // get a random question from the prompt generator and display it to the user
-        Journal Journal = new Journal();
-        PromptGenerator generator = new PromptGenerator();
+        Journal journal = new Journal();
+        PromptGenerator promptGenerator = new PromptGenerator();
+
+        List<string> options = new List<string>();
+        // Choose from the list of options and display the options to the user
+
+        options.Add("1. Write a journal entry");
+        options.Add("2. Display journal entries");
+        options.Add("3. Save journal entries to a file");
+        options.Add("4. Load journal entries from a file");
+        options.Add("5. Quit");
 
         while (true)
         {
-            // Choose from the list of options and display the options to the user
-
-            List<string> options = new List<string>();
-            options.Add("1. Write a journal entry");
-            options.Add("2. Display journal entries");
-            options.Add("3. Save journal entries to a file");
-            options.Add("4. Load journal entries from a file");
-            options.Add("5. Quit");
+            Console.WriteLine("\n----Menu----");
+            foreach (string option in options)
+            {
+                Console.WriteLine(option);
+            }
 
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
@@ -31,8 +37,11 @@ class Program
             if (choice == "1")
              {
                  // Get random prompt and display it to the user
-                string prompt = generator.GetRandomPrompt();
+                string prompt = promptGenerator.GetRandomPrompt();
                 Console.WriteLine($"Prompt: {prompt}");
+
+                Console.WriteLine("How are you feeling today? (Happy, Sad, Excited): ");
+                string mood = Console.ReadLine();
 
                 // Ask the user for their response to the prompt
                 Console.Write("Your response: ");
@@ -45,27 +54,28 @@ class Program
                 entry._date = dateText;
                 entry._entryText = response;
                 entry._promptText = prompt;
+                entry._mood = mood; // Creativity - Call the method to get the user's mood
 
                 //store or add the entry in the journal
-                Journal.AddEntry(entry);
+                journal.AddEntry(entry);
                  
              }
              else if (choice == "2")
              {
                  // Handle displaying journal entries
                  //loop through the journal entries and display them to the user
-                 Journal.DisplayAll();
+                 journal.DisplayAll();
 
              }
              else if (choice == "3")
              {
                 // Handle saving journal entries to a file
-                Journal.SaveToFile();
+                journal.SaveToFile();
              }
              else if (choice == "4")
              {
                 // Handle loading journal entries from a file
-                Journal.LoadFromFile();
+                journal.LoadFromFile();
              }
              else if (choice == "5")
              {

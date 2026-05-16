@@ -14,7 +14,6 @@ public class PromptGenerator
         _prompts.Add("What challenge did you face today?");
         _prompts.Add("What are you grateful for today?");
         _prompts.Add("What is your favorite food?");
-        _prompts.Add("What is your favorite movie?");
      
     }
 
