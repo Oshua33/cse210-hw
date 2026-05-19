@@ -66,17 +66,23 @@ class Program
              {
                  // Handle displaying journal entries
                  //loop through the journal entries and display them to the user
-                 journal.DisplayAll();
+                Console.WriteLine("\nPress Enter to continue...");
+                Console.ReadLine();
+                journal.DisplayAll();
 
              }
              else if (choice == "3")
              {
                 // Handle saving journal entries to a file
+                Console.WriteLine("\nPress Enter to continue...");
+                Console.ReadLine();
                 journal.SaveToFile();
              }
              else if (choice == "4")
              {
                 // Handle loading journal entries from a file
+                Console.WriteLine("\nPress Enter to continue...");
+                Console.ReadLine();
                 journal.LoadFromFile();
              }
              else if (choice == "5")
