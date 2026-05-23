@@ -1,18 +1,16 @@
-using System.Security.Cryptography.X509Certificates;
-
 public class Scripture
 {
     //variblE;
     private Reference _reference;
-    private List<Word> _words;
+    private List<Word> _words = new List<Word>();
 
     private Random _random = new Random();
 
 
     //constuctor
-    public Scripture(Reference Reference, string text)
+    public Scripture(Reference reference, string text)
     {
-        _reference = Reference;
+        _reference = reference;
 
         //create empty string to get each text 
         string[] words = text.Split(" ");
@@ -39,7 +37,7 @@ public class Scripture
             result += word.GetDisplayText() + " ";
         }
 
-        return $" {_reference.GetDisplayText()} : {result} ";
+        return $" {_reference.GetDisplayText()} - {result} ";
 
     }
    

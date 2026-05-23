@@ -16,7 +16,7 @@ class Program
         Console.Write("Enter the Verse: ");
         int verse =int.Parse(Console.ReadLine());
 
-        Console.Write("Enter the endVerse but optional: ");
+        Console.Write("Enter the endVerse but 0 if optional: ");
         int endverse =int.Parse(Console.ReadLine());
 
         // ask for the text from user
@@ -39,7 +39,7 @@ class Program
         string input = "";
 
         //if the user input is not quit and the scripture is showing, you want to clear it 1st
-        while (input != "quit" && !scripture.IsCompletelyHidden())
+        while (input.ToLower() != "quit" && !scripture.IsCompletelyHidden())
         {
             Console.Clear();
 
@@ -47,10 +47,10 @@ class Program
             Console.WriteLine(scripture.GetDisplayText());
 
             //ask user to enter or quit
-            Console.Write("\nPress Enter tocontinue or type quit: ");
+            Console.Write("\nPress Enter to continue or type quit: ");
             input = Console.ReadLine();
 
-            if (input != "quit")
+            if (input.ToLower() != "quit")
             {
                 //hide the random numbers with the lenghts
                 scripture.HideRandomWords(4);
