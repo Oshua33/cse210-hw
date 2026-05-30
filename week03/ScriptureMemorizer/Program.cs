@@ -27,7 +27,19 @@ class Program
         //------  create the objects
 
         //create reference object
-        Reference reference = new Reference(book, chapter, verse, endverse);
+        // Reference reference = new Reference(book, chapter, verse, endverse);
+        Reference reference;
+
+        // if the user enters   0, use single verse constructor
+        if (endverse == 0)
+        {
+            reference = new Reference(book, chapter, verse);
+        }
+        else
+        {
+            // otherwise use verse range constructor
+            reference = new Reference(book, chapter, verse, endverse);
+        }
 
         //create scripture with words
         Scripture scripture = new Scripture(reference, text);
@@ -53,7 +65,7 @@ class Program
             if (input.ToLower() != "quit")
             {
                 //hide the random numbers with the lenghts
-                scripture.HideRandomWords(4);
+                scripture.HideRandomWords(1);
             }
         }
 
