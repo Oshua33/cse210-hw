@@ -9,7 +9,7 @@ public class Video
     private string _author;
 
     //3. track the length of video
-    private int _lenght;
+    private int _length;
 
     //each vido should store list of comment
     // create variable list of comments comes from class comment
@@ -18,24 +18,11 @@ public class Video
     //create a comment class, which the commet above will be define by.
 
     //create the constructor that initalizes the object with only attributes of author, title and lenght. 
-    public Video( string author, string title, int length)
+    public Video(string title, string author, int length)
     {
         _author = author;
         _title = title;
-        _lenght = length;
-
-        //to get each text as comment wich is a list
-        //create empty string to get of text seperated by space 
-        // string[] comments = text.Split(" ");
-
-        // //save each text as a list.
-        // foreach (string textcomment in comments)
-        // {
-        //     //get the input from user
-        //     Comment comment = new Comment(textcomment);
-        //     _comments.Add(comment);
-            
-        // }
+        _length = length;
 
     }
 
@@ -57,14 +44,14 @@ public class Video
 
     public int GetCountComment()
     {
-        return _comments.Count();
+        return _comments.Count;
     }
 
     public void DisplayVideoInfo()
     {
         Console.WriteLine($" title : {_title}");
         Console.WriteLine($" auhor : {_author}");
-        Console.WriteLine($" lenght : {_lenght}");
+        Console.WriteLine($" lenght : {_length} seconds");
         Console.WriteLine($" numberofcomment : {GetCountComment()}");
 
     }
