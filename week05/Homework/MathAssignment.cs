@@ -11,8 +11,8 @@ public class MathAssignment : Assignment
     }
 
     //method to display the math assignment information
-    public new string GetHomeworkList()
+    public string GetHomeworkList()
     {
-        return ($"\nStudent Name: {GetStudentSummary()} \nSection: {_section} \nProblems: {_problems}");
+        return ($"  \nSection: {_section} \nProblems: {_problems}");
     }
 }

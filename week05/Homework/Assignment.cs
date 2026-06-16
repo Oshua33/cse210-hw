@@ -16,4 +16,9 @@ public class Assignment
     {
         return ($"\nStudent Name: {_studentName} \nTopic: {_topic}");
     }
+
+    private string GetStudentName()
+    {
+        return _studentName;
+    }
 }

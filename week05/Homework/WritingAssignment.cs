@@ -10,8 +10,8 @@ public class WritingAssignment : Assignment
     }
 
     //method to display the writing assignment information
-    public new string GetWritingInformation()
+    public string GetWritingInformation()
     {
-        return ($"\nStudent Name: {GetStudentSummary()} \nTitle: {_title}");
+        return $"{_title} by {GetStudentName()}";
     }
 }
